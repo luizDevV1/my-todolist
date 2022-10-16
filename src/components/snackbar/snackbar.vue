@@ -1,7 +1,9 @@
 <template>
-  <div class="snackbar"
+  <div v-show="store.is_open"
+       class="snackbar"
+       :class="store.class_component"
        style="height: 48px; min-width: 300px; max-width: 100%">
-    <b class="text-white">asd</b>
+    <b class="text-white" v-text="store.message"/>
   </div>
 </template>
 

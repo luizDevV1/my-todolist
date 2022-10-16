@@ -1,15 +1,17 @@
 import {reactive, onMounted, defineComponent, ref} from "vue"
 import TodoItem from "../todo-item-list/todo-item.vue";
+import {snackbar_store} from "../snackbar/snackbar.store";
 
 export default {
     components: {TodoItem},
     setup() {
         const value_new_todo = ref<string>('')
         const list_todo = reactive([] as string[])
+        const snackbar = snackbar_store()
 
         function add_width_todolist(): void {
             if (!rules_if_exist_value()) {
-                alert('Escreva uma tarefa ou altere o valor, antes de salvar.')
+                snackbar.create_snackbar('Escreva uma tarefa ou altere o valor, antes de salvar.', 'snackbar')
 
                 return;
             }
