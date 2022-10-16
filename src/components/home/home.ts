@@ -8,7 +8,15 @@ export default {
         const list_todo = reactive([] as string[])
 
         function add_width_todolist(str: string): void {
+            if (!str) {
+                alert('Escreva uma tarefa antes de salvar.')
+
+                return;
+            }
+
             list_todo.push(str)
+
+            value_new_todo.value = ''
         }
 
         function remove_todo_item(item: string): void {

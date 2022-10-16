@@ -6,7 +6,7 @@
           <label for="first_name">Descrição da tarefa</label>
 
           <div class="flex">
-            <input type="text" class="rounded-l-lg" placeholder="Buscar o filho na escola..." v-model="value_new_todo" required>
+            <input type="text" class="rounded-l-lg" placeholder="Buscar meu filho na escola..." v-model="value_new_todo" required>
             <button
                 @click.stop.prevent="add_width_todolist(value_new_todo)" class="button-right">
              <b class="text-lg">

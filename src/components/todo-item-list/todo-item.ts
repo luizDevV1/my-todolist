@@ -1,4 +1,4 @@
-import {computed, onMounted, onUnmounted, toRefs} from "vue";
+import {onMounted, onUnmounted, toRefs} from "vue";
 
 export default {
     props: {
