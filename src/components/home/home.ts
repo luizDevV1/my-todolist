@@ -11,10 +11,17 @@ export default {
             list_todo.push(str)
         }
 
+        function remove_todo_item(item: string): void {
+            const index = list_todo.indexOf(item)
+
+            if (index > -1) list_todo.splice(index, 1)
+        }
+
         return {
             list_todo,
             value_new_todo,
-            add_width_todolist
+            add_width_todolist,
+            remove_todo_item
         }
     }
 }
