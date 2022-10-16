@@ -1,0 +1,11 @@
+.snackbar {
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-2.5 flex items-center justify-start p-2 rounded bg-gray-900;
+}
+.snackbar--error {
+  background-color: red !important;
+}
+.snackbar--success {
+  background-color: green !important;
+}
+
+/*# sourceMappingURL=snackbar.css.map */

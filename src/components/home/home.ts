@@ -7,18 +7,23 @@ export default {
         const value_new_todo = ref<string>('')
         const list_todo = reactive([] as string[])
 
-        function add_width_todolist(str: string): void {
-            if (!str) {
-                alert('Escreva uma tarefa antes de salvar.')
+        function add_width_todolist(): void {
+            if (!rules_if_exist_value()) {
+                alert('Escreva uma tarefa ou altere o valor, antes de salvar.')
 
                 return;
             }
 
-            list_todo.push(str)
+            list_todo.push(value_new_todo.value)
 
             value_new_todo.value = ''
         }
 
+        function rules_if_exist_value(): boolean {
+            return !!value_new_todo.value && !list_todo.find((item) => value_new_todo.value === item)
+        }
+
+        // Emit function
         function remove_todo_item(item: string): void {
             const index = list_todo.indexOf(item)
 
